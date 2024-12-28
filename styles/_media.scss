@@ -1,3 +1,152 @@
+@media screen and (max-width: 425px){
+    header .right-header{
+        .name{
+            font-size: 1.5rem !important;
+        }
+
+        p{
+            font-size: .8rem;
+        }
+    }
+
+     // about me
+     .about-container{
+        padding: .5rem 0 !important;
+        .left-about{
+            h4{
+                font-size: 1.2rem;
+            }
+            p{
+                font-size: .6rem !important;
+            }
+        }
+    }
+
+    .stat-title{
+        padding: 2rem 0;
+        font-size: 1.2rem;
+    }
+
+    .about-stats{
+        .skills{
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    .timeline{
+        .timeline-item h5 {
+            font-size: 1rem;
+            font-weight: 300;
+            span{
+                font-size: 1rem;
+            }
+        }
+
+        .timeline-item p{
+            font-size: .7rem;
+        }
+    }
+
+    // contact me
+    .contact-container{
+        .contact-content-cont{
+            padding-top: .5rem;
+            .left-contact{
+                h4{
+                    font-size: 1rem;
+                    margin-top: 0;
+                }
+                p{
+                    font-size: .7rem;
+                }
+                .contact-icon{
+                    justify-content: center;
+                }
+                .contact-info{
+                    font-size: .8rem;
+                    .contact-item{
+                        .icon{
+                            i{
+                                font-size: .8rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right-contact{
+                margin-top: 1.5rem;
+                .input-control input, .input-control textarea{
+                    font-size: .7rem;
+                }
+            }
+        }
+    }
+
+    // independent components
+    // controls
+    .controls{
+        .control{
+            width: 30px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            i{
+                font-size: 1rem !important;
+            }
+        }
+    }
+
+    // main title
+    .main-title{
+        h2{
+            font-size: 1.5rem !important;
+            span{
+                font-size: 1.5rem !important;
+            }
+            .bg-text{
+                display: none;
+            }
+        }
+    }
+
+    .theme-btn{
+        width: 30px !important;
+        height: 30px !important; 
+    }
+
+    // download cv button
+    .btn-container{
+        height: 2.5rem;
+        .main-btn{
+            height: 100%;
+            .btn-icon{
+                height: 100%;
+                padding: 0.7rem;
+            }
+            .btn-text{
+                font-size: .7rem;
+            }
+        }
+       
+    }
+
+    // submit button
+    .submit-btn{
+        height: 2.5rem;
+        .main-btn{
+            height: 100%;
+            .btn-icon{
+                height: 100%;
+                padding: 0.7rem;
+            }
+            .btn-text{
+                font-size: .7rem;
+            }
+        }
+    }
+}
+
 
 @media screen and (max-width: 600px){
     header{
@@ -40,18 +189,19 @@
 
     .main-title{
         h2{
-            font-size: 2rem;
+            font-size: 1.5rem;
             span{
-                font-size: 2.5rem;
+                font-size: 1.5rem;
             }
             .bg-text{
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
         }
     }
 
     .about-container{
         grid-template-columns: 1fr;
+        padding-top: 2rem;
         .right-about{
             grid-template-columns: 1fr;
             padding-top: 2.5rem;
@@ -96,6 +246,7 @@
     // contacts
     .contact-content-cont{
         flex-direction: column;
+        padding-top: 2rem;
         padding-bottom: 6rem;
         .right-contact{
             margin-left: 0;
@@ -127,16 +278,112 @@
     }
 }
 
-@media screen and (max-width: 1432px){
+@media screen and (min-width: 600px) and (max-width: 900px){
     header{
+        padding: 0;
+    }
+
+    header .right-header{
         padding: 0 !important;
     }
-    .section{
-        padding-top: 7rem 11rem;
+
+    .theme-btn{
+        width: 50px;
+        height: 50px; 
     }
-     // contacts
-     .contact-content-cont{
+
+    .header-content{
+        grid-template-columns: 1fr;
+        padding-bottom: 6rem;
+    }
+
+    .left-header{
+        .h-shape{
+            display: none;
+        }
+    }
+
+    .right-header{
+        grid-row: 1;
+        width: 90%;
+        margin: 0 auto;
+        .name{
+            font-size: 3rem !important;
+        }
+
+        p{
+            font-size: 1.5rem;
+        }
+    }
+
+    .header-content .left-header .image{
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .main-title{
+        h2{
+            font-size: 2.5rem;
+            span{
+                font-size: 2.5rem;
+            }
+            .bg-text{
+                font-size: 3rem;
+            }
+        }
+    }
+
+    // about me
+    .about-container{
+        grid-template-columns: 1fr;
+        padding-top: 2rem;
+        .right-about{
+            grid-template-columns: 1fr 1fr;
+            padding-top: 2.5rem;
+        }
+
+        .left-about{
+            padding-right: 0;
+            p{
+                padding-left: 0;
+                font-size: 1rem;
+                line-height: 1.3rem;
+            }
+        }
+    }
+
+    .timeline{
+        grid-template-columns: 1fr;
+        padding-bottom: 6rem;
+    }
+
+    .section{
+        padding: 2rem 2.5rem;
+    }
+
+    // about stats
+    .about-stats{
+        .skills{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    // portfolio
+    .portfolios{
+        grid-template-columns: 1fr;
+        padding-bottom: 6rem;
+    }
+
+    // blogs
+    .blogs{
+        grid-template-columns: 1fr;
+        padding-bottom: 6rem;
+    }
+
+    // contacts
+    .contact-content-cont{
         flex-direction: column;
+        padding-top: 2rem;
         padding-bottom: 6rem;
         .right-contact{
             margin-left: 0;
@@ -152,25 +399,68 @@
         margin-left: 0;
         margin-top: 1.5rem;
     }
-   
+
+    .controls{
+        top: auto;
+        bottom: 0;
+        flex-direction: row;
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        background-color: var(--color-grey-5);
+        .control{
+            margin: 1rem .3rem;
+        }
+    }
 }
 
-@media screen and (max-width: 1070px) {
-    .about-container{
-        grid-template-columns: 1fr;
-        .right-about{
-            padding-top: 2.5rem;
-        }
-    }
-    .main-title{
-        h2{
-            font-size: 4rem;
-            span{
-                font-size: 4rem;
-            }
-            .bg-text{
-                font-size: 5rem;
-            }
-        }
-    }
-}
+
+
+// @media screen and (max-width: 1432px){
+//     header{
+//         padding: 0 !important;
+//     }
+//     .section{
+//         padding-top: 7rem 11rem;
+//     }
+//      // contacts
+//      .contact-content-cont{
+//         flex-direction: column;
+//         padding-bottom: 6rem;
+//         .right-contact{
+//             margin-left: 0;
+//             margin-top: 2.5rem;
+//         }
+//     }
+
+//     .contact-content-cont .right-contact .i-c-2{
+//         flex-direction: column;
+//     }
+
+//     .contact-content-cont .right-contact .i-c-2 :last-child{
+//         margin-left: 0;
+//         margin-top: 1.5rem;
+//     }
+   
+// }
+
+// @media screen and (max-width: 1070px) {
+//     .about-container{
+//         grid-template-columns: 1fr;
+//         .right-about{
+//             padding-top: 2.5rem;
+//         }
+//     }
+//     .main-title{
+//         h2{
+//             font-size: 4rem;
+//             span{
+//                 font-size: 4rem;
+//             }
+//             .bg-text{
+//                 font-size: 5rem;
+//             }
+//         }
+//     }
+// }
