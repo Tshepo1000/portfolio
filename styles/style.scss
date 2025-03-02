@@ -115,6 +115,11 @@ section{
     }
 }
 
+ul li{
+    list-style: disc;
+    color: var(--color-grey-2);
+}
+
 // controls
 .controls{
     position: fixed;
