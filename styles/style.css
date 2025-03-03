@@ -622,6 +622,10 @@ ul li {
   align-self: flex-start;
 }
 
+#submit-message-btn {
+  background-color: transparent;
+}
+
 .main-btn {
   border-radius: 30px;
   color: inherit;
@@ -720,7 +724,7 @@ ul li {
     font-size: 1rem;
   }
   .timeline .timeline-item p {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
   .contact-container .contact-content-cont {
     padding-top: 0.5rem;
