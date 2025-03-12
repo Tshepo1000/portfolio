@@ -66,7 +66,6 @@ section{
     position: absolute;
     left: 0;
     top: 0;
-    padding: 3rem 18rem; 
 }
 
 .section{
@@ -228,7 +227,7 @@ ul li{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-right: 18rem;
+        padding-right: 10rem;
         .name{
             font-size: 3rem;
             span{
@@ -244,30 +243,28 @@ ul li{
 
 // about section
 .about-container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding-top: 2.5rem;
-    padding-bottom: 5rem;
-    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    padding: 5rem 15rem;
+    gap: 5rem;
     animation: scaleAnim 1s ease-in-out;
     .left-about{
-        padding-right: 2rem;
-        p{
-            font-size: small;
-            line-height: 1.1rem;
-            padding: 1rem;
-            color: var(--color-grey-1);
-        }
         h4{
+            margin-bottom: 1.5rem;
             font-size: 2rem;
             text-transform: uppercase;
+        }
+        p{
+            text-align: justify;
+            color: var(--color-grey-1);
+            margin-bottom: 1.5rem;
         }
     }
 
     .right-about{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 2rem;
+        grid-gap: 2rem;    
         .about-item{
             border: 1px solid var(--color-grey-5);
             border-radius: 5px;
@@ -316,6 +313,7 @@ ul li{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 2rem;
+        padding: 0 15rem;
         .skill-item{
             border: 1px solid var(--color-grey-5);
             border-radius: 5px;
@@ -349,7 +347,8 @@ ul li{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
-    padding-bottom: 3rem;
+    padding: 0 15rem;
+    margin-bottom: 5rem;
     .timeline-item{
         position: relative;
         padding-left: 3rem;
@@ -405,7 +404,8 @@ ul li{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
-    margin-top: 3rem;
+    padding: 0 15rem;
+    margin-bottom: 5rem;
     .portfolio-item{
         position: relative;
         img{
@@ -477,7 +477,8 @@ ul li{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
-    margin-top: 3rem;
+    padding: 0 15rem;
+    margin: 5rem 0;
     .blog{
         position: relative;
         background-color: var(--color-grey-5);
@@ -531,16 +532,17 @@ ul li{
 // contact section
 .contact-content-cont{
     display: flex;
-    padding-top: 3.5rem;
+    align-items: center;
+    padding: 0 15rem;
+    
     .left-contact{
         flex: 2;
         h4{
-            margin-top: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 2rem;
             text-transform: uppercase;
         }
         p{
-            margin: 1rem 0;
             line-height: 2rem;
         }
         .contact-info{
@@ -700,6 +702,7 @@ ul li{
 
 .main-title{
     text-align: center;
+    margin-top: 3rem;
     h2{
         position: relative;
         text-transform: uppercase;

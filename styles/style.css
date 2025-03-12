@@ -63,7 +63,6 @@ section {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 3rem 18rem;
 }
 
 .section {
@@ -219,7 +218,7 @@ ul li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 18rem;
+  padding-right: 10rem;
 }
 .header-content .right-header .name {
   font-size: 3rem;
@@ -233,25 +232,21 @@ ul li {
 }
 
 .about-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding-top: 2.5rem;
-  padding-bottom: 5rem;
-  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  padding: 5rem 15rem;
+  gap: 5rem;
   animation: scaleAnim 1s ease-in-out;
 }
-.about-container .left-about {
-  padding-right: 2rem;
-}
-.about-container .left-about p {
-  font-size: small;
-  line-height: 1.1rem;
-  padding: 1rem;
-  color: var(--color-grey-1);
-}
 .about-container .left-about h4 {
+  margin-bottom: 1.5rem;
   font-size: 2rem;
   text-transform: uppercase;
+}
+.about-container .left-about p {
+  text-align: justify;
+  color: var(--color-grey-1);
+  margin-bottom: 1.5rem;
 }
 .about-container .right-about {
   display: grid;
@@ -302,6 +297,7 @@ ul li {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
+  padding: 0 15rem;
 }
 .about-stats .skills .skill-item {
   border: 1px solid var(--color-grey-5);
@@ -333,7 +329,8 @@ ul li {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  padding-bottom: 3rem;
+  padding: 0 15rem;
+  margin-bottom: 5rem;
 }
 .timeline .timeline-item {
   position: relative;
@@ -388,7 +385,8 @@ ul li {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
-  margin-top: 3rem;
+  padding: 0 15rem;
+  margin-bottom: 5rem;
 }
 .portfolios .portfolio-item {
   position: relative;
@@ -457,7 +455,8 @@ ul li {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
-  margin-top: 3rem;
+  padding: 0 15rem;
+  margin: 5rem 0;
 }
 .blogs .blog {
   position: relative;
@@ -508,18 +507,18 @@ ul li {
 
 .contact-content-cont {
   display: flex;
-  padding-top: 3.5rem;
+  align-items: center;
+  padding: 0 15rem;
 }
 .contact-content-cont .left-contact {
   flex: 2;
 }
 .contact-content-cont .left-contact h4 {
-  margin-top: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 2rem;
   text-transform: uppercase;
 }
 .contact-content-cont .left-contact p {
-  margin: 1rem 0;
   line-height: 2rem;
 }
 .contact-content-cont .left-contact .contact-info .contact-item {
@@ -671,6 +670,7 @@ ul li {
 
 .main-title {
   text-align: center;
+  margin-top: 3rem;
 }
 .main-title h2 {
   position: relative;
@@ -701,13 +701,20 @@ ul li {
     font-size: 0.8rem;
   }
   .about-container {
-    padding: 0.5rem 0 !important;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
   }
   .about-container .left-about h4 {
+    margin-bottom: 0.5rem;
     font-size: 1.2rem;
   }
   .about-container .left-about p {
+    text-align: left;
     font-size: 0.6rem !important;
+  }
+  .about-container .right-about {
+    grid-gap: 1rem;
   }
   .stat-title {
     padding: 2rem 0;
@@ -715,18 +722,30 @@ ul li {
   }
   .about-stats .skills {
     grid-template-columns: 1fr !important;
+    padding: 0;
+    grid-gap: 1rem;
+  }
+  .timeline {
+    padding: 0;
   }
   .timeline .timeline-item h5 {
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: 300;
   }
   .timeline .timeline-item h5 span {
-    font-size: 1rem;
+    font-size: 0.7rem;
   }
-  .timeline .timeline-item p {
-    font-size: 0.5rem;
+  .timeline .timeline-item ul li {
+    font-size: 0.7rem;
+  }
+  .portfolios {
+    padding: 0;
+  }
+  .blogs {
+    padding: 0;
   }
   .contact-container .contact-content-cont {
+    padding: 0;
     padding-top: 0.5rem;
   }
   .contact-container .contact-content-cont .left-contact h4 {
@@ -746,10 +765,15 @@ ul li {
     font-size: 0.8rem;
   }
   .contact-container .contact-content-cont .right-contact {
+    width: 100%;
     margin-top: 1.5rem;
   }
   .contact-container .contact-content-cont .right-contact .input-control input, .contact-container .contact-content-cont .right-contact .input-control textarea {
     font-size: 0.7rem;
+    border-radius: 5px;
+  }
+  .contact-container .contact-content-cont .right-contact .submit-btn {
+    margin-bottom: 100px;
   }
   .controls .control {
     width: 30px;
@@ -759,6 +783,9 @@ ul li {
   }
   .controls .control i {
     font-size: 1rem !important;
+  }
+  .main-title {
+    margin-top: 0;
   }
   .main-title h2 {
     font-size: 1.5rem !important;
@@ -840,7 +867,7 @@ ul li {
     font-size: 1.8rem;
   }
   .about-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: fr;
     padding-top: 2rem;
   }
   .about-container .right-about {
@@ -901,7 +928,7 @@ ul li {
     margin: 1rem 0.3rem;
   }
 }
-@media screen and (min-width: 600px) and (max-width: 900px) {
+@media screen and (min-width: 600px) and (max-width: 800px) {
   header {
     padding: 0;
   }
@@ -925,7 +952,7 @@ ul li {
     margin: 0 auto;
   }
   .right-header .name {
-    font-size: 3rem !important;
+    font-size: 2rem !important;
   }
   .right-header p {
     font-size: 1.5rem;
@@ -937,21 +964,21 @@ ul li {
   .main-title h2 {
     font-size: 2.5rem;
   }
-  .main-title h2 span {
-    font-size: 2.5rem;
-  }
-  .main-title h2 .bg-text {
-    font-size: 3rem;
+  .main-title h2 span .bg-text {
+    font-size: 1rem !important;
   }
   .about-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    padding: 0;
     padding-top: 2rem;
   }
   .about-container .right-about {
+    width: 100%;
     grid-template-columns: 1fr 1fr;
     padding-top: 2.5rem;
   }
   .about-container .left-about {
+    width: 100%;
     padding-right: 0;
   }
   .about-container .left-about p {
@@ -963,26 +990,36 @@ ul li {
     grid-template-columns: 1fr;
     padding-bottom: 6rem;
   }
+  .timeline .timeline-item ul li {
+    font-size: 1rem;
+  }
   .section {
     padding: 2rem 2.5rem;
   }
   .about-stats .skills {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+  .timeline {
+    padding: 0;
   }
   .portfolios {
-    grid-template-columns: 1fr;
+    margin: 0 auto;
+    padding: 0;
     padding-bottom: 6rem;
   }
   .blogs {
-    grid-template-columns: 1fr;
+    padding: 0;
     padding-bottom: 6rem;
   }
   .contact-content-cont {
     flex-direction: column;
-    padding-top: 2rem;
+    padding: 2rem 5rem;
     padding-bottom: 6rem;
   }
   .contact-content-cont .right-contact {
+    width: 100%;
+    padding: 0;
     margin-left: 0;
     margin-top: 2.5rem;
   }
@@ -1005,6 +1042,93 @@ ul li {
   }
   .controls .control {
     margin: 1rem 0.3rem;
+  }
+  .btn-container {
+    height: 2rem;
+  }
+  .btn-container .main-btn {
+    height: 100%;
+  }
+  .btn-container .main-btn .btn-icon {
+    height: 100%;
+    padding: 0.7rem;
+  }
+  .btn-container .main-btn .btn-text {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+  .right-header {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .right-header .name {
+    font-size: 1.7rem !important;
+  }
+  .right-header p {
+    font-size: 1rem;
+  }
+  .about-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem;
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+  }
+  .about-container .right-about {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 2.5rem;
+  }
+  .about-container .left-about {
+    padding-right: 0;
+    width: 40%;
+  }
+  .about-container .left-about p {
+    padding-left: 0;
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  .about-stats .skills {
+    padding: 0 5rem;
+  }
+  .timeline {
+    padding: 0 5rem;
+  }
+  .portfolios {
+    padding: 2rem 5rem;
+  }
+  .blogs {
+    padding: 2rem 5rem;
+  }
+  .contact-content-cont {
+    padding: 2rem 5rem;
+  }
+  .btn-container {
+    height: 2rem;
+  }
+  .btn-container .main-btn {
+    height: 100%;
+  }
+  .btn-container .main-btn .btn-icon {
+    height: 100%;
+    padding: 0.7rem;
+  }
+  .btn-container .main-btn .btn-text {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 1070px) {
+  .about-container .right-about {
+    padding-top: 2.5rem;
+  }
+  .main-title h2 {
+    font-size: 4rem;
+  }
+  .main-title h2 span {
+    font-size: 4rem;
+  }
+  .main-title h2 .bg-text {
+    font-size: 5rem;
   }
 }
 
