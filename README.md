@@ -12,12 +12,13 @@ Personal portfolio site for Tshepo Sekete, a software developer and cloud engine
 | About | Background, stats, skills, certifications, work timeline, education and languages |
 | Work | Client and organisation websites with links to the live sites |
 | Writing | Short notes on development |
-| Contact | Contact details and a message form (opens your mail client) |
+| Contact | Contact details and a message form, sent through Web3Forms |
 
 ## Built with
 
 - HTML5 and CSS3 (custom properties, flexbox and grid, fluid `clamp()` typography)
 - Vanilla JavaScript: scroll reveals, count-up stats, animated hero title, mobile menu and the contact form
+- [Web3Forms](https://web3forms.com) to deliver contact form messages by email
 - Google Fonts: Bricolage Grotesque and Inter
 
 No frameworks, build step or dependencies are needed.
@@ -67,6 +68,15 @@ python -m http.server 8000
 ## Deployment
 
 The site is hosted on GitHub Pages from the `main` branch. All links are relative, so it works under the `/portfolio/` sub-path. Paths are case-sensitive on GitHub Pages; the `Pages/` folder must keep its capital P.
+
+## Contact form setup
+
+The form on the Contact page sends messages through [Web3Forms](https://web3forms.com), which emails them to you. To enable it:
+
+1. Go to [web3forms.com](https://web3forms.com), enter the email address that should receive messages, and copy the access key they send you.
+2. In `Pages/contact.html`, replace `YOUR_WEB3FORMS_ACCESS_KEY` in the form's `data-access-key` attribute with that key.
+
+The access key is meant to be public, so committing it is safe. Until a key is set, the form falls back to opening the visitor's email app with the message pre-filled.
 
 ## Contact
 
