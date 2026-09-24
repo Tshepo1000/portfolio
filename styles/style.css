@@ -206,6 +206,12 @@ form.min-form textarea{resize:vertical;min-height:90px;}
   cursor:pointer;display:inline-flex;align-items:center;gap:8px;
 }
 .submit-btn:hover .u-link::after{transform:scaleX(0);transform-origin:left;transition:transform 0s;}
+.submit-btn:disabled{cursor:wait;color:var(--ink-dim);}
+.form-status{margin-top:18px;font-size:.9rem;color:var(--ink-dim);}
+.form-status:empty{display:none;}
+.form-status.success{color:var(--ink);}
+.form-status.error{color:#b42318;}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
 
 /* ---------- FOOTER ---------- */
 footer{border-top:1px solid var(--line);padding:36px 0;}

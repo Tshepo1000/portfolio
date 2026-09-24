@@ -48,7 +48,9 @@
       <div class="info-row"><span class="k">LinkedIn</span><a href="https://linkedin.com/in/tshepo-sekete-154094157" target="_blank" rel="noopener">tshepo-sekete</a></div>
     </div>
 
-    <form class="min-form" id="contactForm" data-reveal>
+    <!-- Web3Forms access key (public by design): get one free at https://web3forms.com -->
+    <form class="min-form" id="contactForm" data-access-key="89a57d31-8f5c-4240-9fcf-fcd16ef4868c" data-reveal>
+      <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="field">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required placeholder="Your name">
@@ -62,6 +64,7 @@
         <textarea id="message" name="message" required placeholder="What would you like to talk about?"></textarea>
       </div>
       <button type="submit" class="submit-btn"><span class="u-link">Send message</span></button>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
     </form>
   </div>
 </main>

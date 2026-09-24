@@ -95,17 +95,58 @@ if (cursorPreview && workRows.length && window.matchMedia('(hover: hover) and (p
   });
 }
 
-// ---------- Contact form -> mailto fallback ----------
+// ---------- Contact form -> Web3Forms (mailto fallback) ----------
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+  const statusEl = document.getElementById('formStatus');
+  const submitBtn = contactForm.querySelector('.submit-btn');
+  const submitLabel = submitBtn.querySelector('span');
+  const accessKey = contactForm.dataset.accessKey || '';
+  const hasKey = accessKey && !accessKey.startsWith('YOUR_');
+
+  const setStatus = (text, type) => {
+    statusEl.textContent = text;
+    statusEl.className = 'form-status' + (type ? ' ' + type : '');
+  };
+  const openMailto = (name, email, message) => {
     const subject = encodeURIComponent('Portfolio contact from ' + name);
     const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
     window.location.href = `mailto:tshepotubatsi@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!hasKey) { openMailto(name, email, message); return; }
+
+    submitBtn.disabled = true;
+    submitLabel.textContent = 'Sending…';
+    setStatus('', '');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: 'Portfolio contact from ' + name,
+          from_name: 'Portfolio website',
+          name, email, message,
+          botcheck: contactForm.querySelector('[name="botcheck"]').checked
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.success) throw new Error(data.message || 'Request failed');
+      contactForm.reset();
+      setStatus("Thanks — your message has been sent. I'll get back to you soon.", 'success');
+    } catch (err) {
+      setStatus('Sorry, something went wrong. Please email me directly at tshepotubatsi@gmail.com.', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitLabel.textContent = 'Send message';
+    }
   });
 }
 
