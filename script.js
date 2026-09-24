@@ -2,14 +2,19 @@
 const menuToggle = document.getElementById('menuToggle');
 const mobileOverlay = document.getElementById('mobileOverlay');
 if (menuToggle && mobileOverlay) {
-  menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('open');
-    mobileOverlay.classList.toggle('open');
-  });
-  mobileOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    menuToggle.classList.remove('open');
-    mobileOverlay.classList.remove('open');
-  }));
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.setAttribute('aria-controls', 'mobileOverlay');
+  const setMenu = (open) => {
+    menuToggle.classList.toggle('open', open);
+    mobileOverlay.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  menuToggle.addEventListener('click', () => setMenu(!mobileOverlay.classList.contains('open')));
+  mobileOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
 }
 
 // ---------- Active nav link ----------
