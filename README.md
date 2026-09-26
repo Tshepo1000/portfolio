@@ -67,6 +67,8 @@ python -m http.server 8000
 
 The site is hosted on GitHub Pages from the `main` branch. All links are relative, so it works under the `/portfolio/` sub-path. Paths are case-sensitive on GitHub Pages; the `Pages/` folder must keep its capital P.
 
+GitHub Pages lets browsers cache files for 10 minutes, so every page loads `style.css` and `script.js` with a version tag (for example `style.css?v=20260926`). After changing either file, update the tag on every page (`index.html` and each file in `Pages/`) so visitors get the new version straight away.
+
 ## Contact form setup
 
 The form on the Contact page sends messages through [Web3Forms](https://web3forms.com), which emails them to you. To enable it:
