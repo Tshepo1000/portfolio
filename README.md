@@ -8,10 +8,9 @@ Personal portfolio site for Tshepo Sekete, a software developer and cloud engine
 
 | Page | Contents |
 | --- | --- |
-| Home | Introduction, tech stack marquee, links to each section and a CV download |
+| Home | Introduction, tech stack marquee, why work with me, links to each section and a CV download |
 | About | Background, stats, skills, certifications, work timeline, education and languages |
 | Work | Client and organisation websites with links to the live sites |
-| Writing | Short notes on development |
 | Contact | Contact details and a message form, sent through Web3Forms |
 
 ## Built with
@@ -39,14 +38,13 @@ portfolio/
 ├── Pages/
 │   ├── about.html
 │   ├── work.html
-│   ├── blog.html       # Writing
 │   └── contact.html
 ├── styles/
 │   └── style.css       # All site styles
 ├── script.js           # All site behaviour
 ├── files/
 │   └── Tshepo_Sekete_Resume.pdf
-└── img/                # Project and blog images
+└── img/                # Images
 ```
 
 ## Running locally
